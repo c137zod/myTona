@@ -1,0 +1,534 @@
+@font-face {
+    font-family: FrizQuadrataC;
+    src: url(fonts/FrizQuadrataC.otf);
+}
+
+@font-face {
+    font-family: AlbertusMedium;
+    src: url(fonts/AlbertusMedium.ttf);
+}
+
+@-webkit-keyframes blink {
+    0% {
+        color: #460000;
+    }
+    50% {
+        color: #FFF;
+    }
+    100% {
+        color: #460000;
+    }
+}
+
+@keyframes blink {
+    0% {
+        color: #460000;
+    }
+    50% {
+        color: #FFF;
+    }
+    100% {
+        color: #460000;
+    }
+}
+
+@keyframes wobble {
+    from {
+        transform: translate3d(0, 0, 0);
+    }
+
+    15% {
+        transform: translate3d(-25%, 0, 0) rotate3d(0, 0, 1, -5deg);
+    }
+
+    30% {
+        transform: translate3d(20%, 0, 0) rotate3d(0, 0, 1, 3deg);
+    }
+
+    45% {
+        transform: translate3d(-15%, 0, 0) rotate3d(0, 0, 1, -3deg);
+    }
+
+    60% {
+        transform: translate3d(10%, 0, 0) rotate3d(0, 0, 1, 2deg);
+    }
+
+    75% {
+        transform: translate3d(-5%, 0, 0) rotate3d(0, 0, 1, -1deg);
+    }
+
+    to {
+        transform: translate3d(0, 0, 0);
+    }
+}
+
+.blink {
+    animation-name: blinker;
+    animation-iteration-count: infinite;
+    animation-timing-function: cubic-bezier(1.0,2.0,0,1.0);
+    animation-duration: 1s;
+    -webkit-animation-name: blinker;
+    -webkit-animation-iteration-count: infinite;
+    -webkit-animation-timing-function: cubic-bezier(1.0,2.0,0,1.0);
+    -webkit-animation-duration: 1s;
+}
+
+@keyframes blinker {
+    from { opacity: 1.0; }
+    to { opacity: 0.0; }
+}
+
+@-webkit-keyframes blinker {
+    from { opacity: 1.0; }
+    to { opacity: 0.0; }
+}
+.wobble {
+    animation-name: wobble;
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+}
+
+#wrapper {
+    width: 100%;
+    height: 100%;
+    background: url("images/bg_ho.png") no-repeat;
+    background-size: 100% 100%;;
+}
+
+.headLogo {
+    margin: 0 auto;
+    width: 23%;
+    height: 20%;
+    position: relative;
+    top: 4%;
+}
+
+.tutorialLogo {
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    margin: 0 auto;
+    top: 2%;
+}
+
+.headLogo .textTutorial {
+    display: inline-block;
+    position: relative;
+    margin: 0 auto;
+    width: 100%;
+    height: 100%;
+    font-family: FrizQuadrataC;
+    color: #460000;
+    vertical-align: middle;
+    font-size: 2em;
+    line-height: 100%;
+    text-align: center;
+    text-transform: uppercase;
+    top: 39%;
+    -webkit-animation: blink 4s linear infinite;
+    animation: blink 4s linear infinite;
+}
+
+.footerLogo {
+    margin: 0 auto;
+    width: 60%;
+    height: 10%;
+    position: relative;
+    top: 69.8%;
+}
+
+.hoGuiLogo {
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    margin: 0 auto;
+    top: 2%;
+}
+
+.hoGuiItems {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    line-height: 100%;
+
+}
+
+.hoGuiItems li {
+    flex-basis: auto;
+    list-style-type: none;
+    flex-grow: 1;
+    text-decoration: none;
+    margin: 0;
+    padding: 0;
+    font-family: AlbertusMedium;
+    color: #4f0101;
+    font-weight: 400;
+    text-align: center;
+    vertical-align: middle;
+    line-height: 300%;
+    font-size: 200%;
+}
+
+.imagesContainer {
+    width: 100%;
+    height: 69%;
+    position: relative;
+    display: inline-block;
+}
+
+#mirror {
+    margin: 0 auto;
+    width: 4%;
+    height: 19%;
+    position: relative;
+    top: 9.5%;
+    left: 18.5%;
+    z-index: 5;
+}
+
+#balerina {
+    margin: 0 auto;
+    width: 4%;
+    height: 19%;
+    position: relative;
+    top: 19.5%;
+    left: 48.5%;
+    z-index: 4;
+}
+
+#parfume {
+    margin: 0 auto;
+    width: 2%;
+    height: 8%;
+    position: relative;
+    top: 27.5%;
+    left: 25.5%;
+    z-index: 3;
+}
+
+#comb {
+    margin: 0 auto;
+    width: 3%;
+    height: 11%;
+    position: relative;
+    top: 10.5%;
+    left: 76.5%;
+    z-index: 2;
+    transform: skewX(-28deg);
+}
+
+#gameOverBanner {
+    width: 29%;
+    height: 20%;
+    position: relative;
+    display: none;
+    margin: 0 auto;
+    top: 40%;
+}
+
+#gameOverButton {
+    margin: 0 auto;
+    display: none;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    text-align: center;
+
+}
+#gameOverButtonLink {
+    margin: 0 auto;
+    position: relative;
+    display: none;
+    width: 100%;
+    height: 100%;
+    font-family: FrizQuadrataC;
+    color: #460000;
+    vertical-align: 30%;
+    font-size: 2em;
+    line-height: 100%;
+    text-align: center;
+    text-transform: uppercase;
+    -webkit-animation: blink 4s linear infinite;
+    animation: blink 4s linear infinite;
+    text-decoration: none;
+}
+.gameOverButtonText {
+    display: inline-block;
+    position: relative;
+    margin: 0 auto;
+    width: 100%;
+    height: 100%;
+    font-family: FrizQuadrataC;
+    color: #460000;
+    vertical-align: middle;
+    font-size: 2em;
+    line-height: 100%;
+    text-align: center;
+    text-transform: uppercase;
+    top: 26%;
+    -webkit-animation: blink 4s linear infinite;
+    animation: blink 4s linear infinite;
+}
+.hidden {
+    visibility: hidden;
+}
+@media screen and (min-width: 320px) {
+    .tutorialLogo {
+        height: 88%;
+    }
+
+    .headLogo {
+        height: 8%;
+    }
+
+    .headLogo .textTutorial {
+        font-size: 0.3em;
+    }
+
+    .hoGuiItems li {
+        line-height: 792%;
+        font-size: 65%;
+    }
+
+    .footerLogo {
+        top: 81.8%;
+    }
+
+    #mirror {
+        top: 28.5%;
+    }
+
+    #balerina {
+        top: 39.5%;
+    }
+
+    #parfume {
+        top: 47.5%;
+    }
+
+    #comb {
+        top: 30.5%;
+    }
+}
+
+@media screen and (min-width: 480px) {
+    .tutorialLogo {
+        height: 88%;
+    }
+
+    .headLogo {
+        height: 13%;
+        width: 17%;
+    }
+
+    .headLogo .textTutorial {
+        font-size: 0.1em;
+    }
+
+    .hoGuiItems li {
+        line-height: 438%;
+        font-size: 64%;
+    }
+
+    .footerLogo {
+        top: 76.8%;
+    }
+
+    #mirror {
+        top: 21.5%;
+    }
+
+    #balerina {
+        top: 31.5%;
+    }
+
+    #parfume {
+        top: 39.5%;
+    }
+
+    #comb {
+        top: 23.5%;
+    }
+}
+
+@media screen and (min-width: 768px) {
+    .headLogo {
+        height: 13%;
+        width: 20%
+    }
+
+    .footerLogo {
+        top: 77.8%;
+    }
+
+    .hoGuiItems li {
+        line-height: 565%;
+        font-size: 134%;
+    }
+
+    .headLogo .textTutorial {
+        font-size: 1em;
+    }
+
+    #mirror {
+        top: 21.5%;
+    }
+
+    #balerina {
+        top: 31.5%;
+    }
+
+    #parfume {
+        top: 40.5%;
+    }
+
+    #comb {
+        top: 23.5%;
+    }
+}
+
+@media screen and (min-width: 991px) {
+    .headLogo .textTutorial {
+        font-size: 1em;
+    }
+
+    .headLogo {
+        height: 15%;
+        width: 21%
+    }
+
+    .hoGuiItems li {
+        line-height: 441%;
+        font-size: 143%;
+    }
+
+    .footerLogo {
+        top: 74.8%;
+    }
+
+    #mirror {
+        top: 18.5%;
+    }
+
+    #balerina {
+        top: 28.5%;
+    }
+
+    #parfume {
+        top: 37.5%;
+    }
+
+    #comb {
+        top: 19.5%;
+    }
+}
+
+@media screen and (min-width: 1280px) {
+    #wrapper {
+        width: 100%;
+        height: 100%;
+        background: url("images/bg_ho.png") no-repeat;
+        background-size: 100% 100%;
+    }
+
+    .headLogo {
+        height: 27%;
+        width: 22%
+    }
+
+    .footerLogo {
+        top: 62.8%;
+    }
+
+    .hoGuiItems li {
+        font-size: 238%;
+        line-height: 243%;
+    }
+
+    .headLogo .textTutorial {
+        font-size: 1.8em;
+    }
+
+    #mirror {
+        top: 0.5%;
+    }
+
+    #balerina {
+        top: 10.5%;
+    }
+
+    #parfume {
+        top: 19.5%;
+    }
+
+    #comb {
+        top: 1.5%;
+    }
+}
+
+@media screen and (min-width: 1600px) {
+    #wrapper {
+        width: 100%;
+        height: 100%;
+        background: url("images/bg_ho.png") no-repeat;
+        background-size: 100% 100%;
+    }
+
+    .headLogo {
+        height: 21%;
+        width: 23%;
+    }
+
+    .footerLogo {
+        top: 68.8%;
+    }
+
+    .hoGuiItems li {
+        font-size: 238%;
+        line-height: 268%;
+    }
+
+    .headLogo .textTutorial {
+        font-size: 1.9em;
+        top: 35%;
+    }
+
+    #mirror {
+        width: 4%;
+        height: 19%;
+        top: 9.5%;
+        left: 18.5%;
+    }
+
+    #balerina {
+        width: 4%;
+        height: 19%;
+        top: 19.5%;
+        left: 48.5%;
+    }
+
+    #parfume {
+        width: 2%;
+        height: 8%;
+        top: 27.5%;
+        left: 25.5%;
+    }
+
+    #comb {
+        width: 3%;
+        height: 11%;
+        top: 10.5%;
+        left: 76.5%;
+    }
+}
+
