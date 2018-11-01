@@ -65,23 +65,32 @@
 .blink {
     animation-name: blinker;
     animation-iteration-count: infinite;
-    animation-timing-function: cubic-bezier(1.0,2.0,0,1.0);
+    animation-timing-function: cubic-bezier(1.0, 2.0, 0, 1.0);
     animation-duration: 1s;
     -webkit-animation-name: blinker;
     -webkit-animation-iteration-count: infinite;
-    -webkit-animation-timing-function: cubic-bezier(1.0,2.0,0,1.0);
+    -webkit-animation-timing-function: cubic-bezier(1.0, 2.0, 0, 1.0);
     -webkit-animation-duration: 1s;
 }
 
 @keyframes blinker {
-    from { opacity: 1.0; }
-    to { opacity: 0.0; }
+    from {
+        opacity: 1.0;
+    }
+    to {
+        opacity: 0.0;
+    }
 }
 
 @-webkit-keyframes blinker {
-    from { opacity: 1.0; }
-    to { opacity: 0.0; }
+    from {
+        opacity: 1.0;
+    }
+    to {
+        opacity: 0.0;
+    }
 }
+
 .wobble {
     animation-name: wobble;
 }
@@ -245,6 +254,7 @@ html, body {
     text-align: center;
 
 }
+
 #gameOverButtonLink {
     margin: 0 auto;
     position: relative;
@@ -262,6 +272,7 @@ html, body {
     animation: blink 4s linear infinite;
     text-decoration: none;
 }
+
 .gameOverButtonText {
     display: inline-block;
     position: relative;
@@ -279,45 +290,58 @@ html, body {
     -webkit-animation: blink 4s linear infinite;
     animation: blink 4s linear infinite;
 }
+
 .hidden {
     visibility: hidden;
 }
+
 @media screen and (min-width: 320px) {
     .tutorialLogo {
         height: 88%;
     }
 
     .headLogo {
-        height: 8%;
+        height: 4%;
+        width: 20%;
     }
 
+
     .headLogo .textTutorial {
-        font-size: 0.3em;
+        font-size: 0.1em;
+    }
+
+    .gameOverButtonText {
+        font-size: 1em;
     }
 
     .hoGuiItems li {
-        line-height: 792%;
-        font-size: 65%;
+        line-height: 754%;
+        font-size: 145%;
     }
 
     .footerLogo {
-        top: 81.8%;
+        top: 85.8%;
     }
 
     #mirror {
-        top: 28.5%;
+        top: 34.5%;
     }
 
     #balerina {
-        top: 39.5%;
+        top: 44.5%;
     }
 
     #parfume {
-        top: 47.5%;
+        top: 53.5%;
     }
 
     #comb {
-        top: 30.5%;
+        top: 34.5%;
+    }
+
+    #gameOverBanner {
+        width: 29%;
+        height: 6%;
     }
 }
 
@@ -327,37 +351,47 @@ html, body {
     }
 
     .headLogo {
-        height: 13%;
+        height: 5%;
         width: 17%;
     }
 
+
     .headLogo .textTutorial {
-        font-size: 0.1em;
+        font-size: 0.5em;
+    }
+
+    .gameOverButtonText {
+        font-size: 1em;
     }
 
     .hoGuiItems li {
-        line-height: 438%;
+        line-height: 700%;
         font-size: 64%;
     }
 
     .footerLogo {
-        top: 76.8%;
+        top: 84.8%;
     }
 
     #mirror {
-        top: 21.5%;
+        top: 32.5%;
     }
 
     #balerina {
-        top: 31.5%;
+        top: 43.5%;
     }
 
     #parfume {
-        top: 39.5%;
+        top: 51.5%;
     }
 
     #comb {
-        top: 23.5%;
+        top: 34.5%;
+    }
+
+    #gameOverBanner {
+        width: 29%;
+        height: 14%;
     }
 }
 
@@ -367,16 +401,24 @@ html, body {
         width: 20%
     }
 
+    .tutorialLogo {
+        height: 112%;
+    }
+
     .footerLogo {
-        top: 77.8%;
+        top: 76.8%;
     }
 
     .hoGuiItems li {
-        line-height: 565%;
+        line-height: 273%;
         font-size: 134%;
     }
 
     .headLogo .textTutorial {
+        font-size: 1em;
+    }
+
+    .gameOverButtonText {
         font-size: 1em;
     }
 
@@ -395,6 +437,7 @@ html, body {
     #comb {
         top: 23.5%;
     }
+
 }
 
 @media screen and (min-width: 991px) {
@@ -431,6 +474,19 @@ html, body {
     #comb {
         top: 19.5%;
     }
+
+
+    .headLogo .textTutorial {
+        font-size: 1.3em;
+    }
+
+    .gameOverButtonText {
+        font-size: 1.3em;
+    }
+    #gameOverBanner {
+        height: 14%;
+        width: 30%;
+    }
 }
 
 @media screen and (min-width: 1280px) {
@@ -441,38 +497,48 @@ html, body {
         background-size: 100% 100%;
     }
 
+
+    .headLogo .textTutorial {
+        font-size: 1.7em;
+    }
+
+    .gameOverButtonText {
+        font-size: 1.7em;
+    }
+
+    #gameOverBanner {
+        height: 17%;
+        width: 32%;
+    }
+
     .headLogo {
-        height: 27%;
-        width: 22%
+        height: 21%;
+        width: 28%
     }
 
     .footerLogo {
-        top: 62.8%;
+        top: 68.8%;
     }
 
     .hoGuiItems li {
-        font-size: 238%;
-        line-height: 243%;
-    }
-
-    .headLogo .textTutorial {
-        font-size: 1.8em;
+        font-size: 214%;
+        line-height: 375%;
     }
 
     #mirror {
-        top: 0.5%;
+        top: 9.5%;
     }
 
     #balerina {
-        top: 10.5%;
+        top: 20.5%;
     }
 
     #parfume {
-        top: 19.5%;
+        top: 28.5%;
     }
 
     #comb {
-        top: 1.5%;
+        top: 9.5%;
     }
 }
 
@@ -482,6 +548,14 @@ html, body {
         height: 100%;
         background: url("images/bg_ho.png") no-repeat;
         background-size: 100% 100%;
+    }
+
+    #gameOverBanner {
+        height: 17%;
+    }
+
+    .tutorialLogo {
+        height: 80%;
     }
 
     .headLogo {
@@ -494,13 +568,17 @@ html, body {
     }
 
     .hoGuiItems li {
-        font-size: 238%;
-        line-height: 268%;
+        font-size: 245%;
+        line-height: 319%;
     }
 
     .headLogo .textTutorial {
         font-size: 1.9em;
         top: 35%;
+    }
+
+    .gameOverButtonText {
+        font-size: 1.9em;
     }
 
     #mirror {

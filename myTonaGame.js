@@ -9,45 +9,26 @@ window.onload = function () {
         start: function () {
             game.init();
             if (game.setting.playable) {
-                document.getElementById("mirror").onclick = function () {
-                    document.getElementById("mirror").src = ('css/images/sparks.gif');
-                    setTimeout(function () {
-                        document.getElementById("mirror").className = 'hidden';
-                    }, 1000);
-                    document.getElementById("mirrorText").style.textDecoration = 'line-through';
-                    game.setting.itemsFound++;
-                    game.checkItems();
-                };
-                document.getElementById('balerina').onclick = function () {
-                    document.getElementById("balerina").src = ('css/images/sparks.gif');
-                    setTimeout(function () {
-                        document.getElementById("balerina").className = 'hidden';
-                    }, 1000);
-                    document.getElementById("balletDancerText").style.textDecoration = 'line-through';
-                    game.setting.itemsFound++;
-                    game.checkItems();
-                };
-                document.getElementById('parfume').onclick = function () {
-                    document.getElementById("parfume").src = ('css/images/sparks.gif');
-                    setTimeout(function () {
-                        document.getElementById("parfume").className = 'hidden';
-                    }, 1000);
-                    document.getElementById("perfumeText").style.textDecoration = 'line-through';
-                    game.setting.itemsFound++;
-                    game.checkItems();
-                };
-                document.getElementById('comb').onclick = function () {
-                    document.getElementById("comb").src = ('css/images/sparks.gif');
-                    setTimeout(function () {
-                        document.getElementById("comb").className = 'hidden';
-                    }, 1000);
-                    document.getElementById("combText").style.textDecoration = 'line-through';
-                    game.setting.itemsFound++;
-                    game.checkItems();
-                };
+
+                game.disapearImage("mirror", "mirrorText");
+                game.disapearImage("balerina", "balletDancerText");
+                game.disapearImage("parfume", "perfumeText");
+                game.disapearImage("comb", "combText");
+
             }
         },
 
+        disapearImage: function (item, itemText) {
+            document.getElementById(item).onclick = function () {
+                document.getElementById(item).src = ('css/images/sparks.gif');
+                setTimeout(function () {
+                    document.getElementById(item).className = 'hidden';
+                }, 1000);
+                document.getElementById(itemText).style.textDecoration = 'line-through';
+                game.setting.itemsFound++;
+                game.checkItems();
+            };
+        },
         checkItems: function () {
             if (game.setting.itemsFound === 4) {
                 setTimeout('game.gameOver()', 1000);
@@ -59,7 +40,7 @@ window.onload = function () {
             let parentDOM = document.getElementById('wrapper');
 
             parentDOM.style.background = 'url("css/images/bg_blur.png") no-repeat';
-            parentDOM.style.backgroundSize = '100% 100%;';
+            parentDOM.style.backgroundSize = "100% 100%";
 
             let head = parentDOM.getElementsByClassName('headLogo')[0];
             head.style.display = 'none';
@@ -92,9 +73,10 @@ window.onload = function () {
             function CheckIdleTime() {
                 game.setting.helpCounter++;
                 if (game.setting.helpCounter == game.setting.timeToHelp) {
-                    var el = document.querySelector("div.imagesContainer img:not(.hidden)");
-                    console.log(el);
-                    el.classList.add = 'blink';
+                    let el = document.querySelector("div.imagesContainer img:not(.hidden)");
+                    if (el !== null) {
+                        el.classList.add('blink');
+                    }
                 }
             }
         }
